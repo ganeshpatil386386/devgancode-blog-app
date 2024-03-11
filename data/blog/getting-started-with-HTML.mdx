@@ -1,0 +1,193 @@
+---
+title: The Ultimate Guide for Beginner's to Learn HTML from Scratch
+date: '2022-12-21'
+tags: ['next js', 'math', 'ols']
+draft: false
+summary: 'Learn HTML in on short.'
+---
+
+Hypertext Markup Language(HTML). The difference between HTML and HTML5 is the latest version of the language with new features, powers, and more positive results nothing fancy.
+
+# Starting with HTML
+
+The below elements that we are going to explore in this article remember no course or guide will teach you the whole programming. The modern way approach is to understand the basics and build and explore.
+
+- HTML Document Format
+- Meta tags
+- preloading & prefetching
+- HTML Tags (Self-closing & open-close tags)
+- Semantic HTML
+- Forms
+- Table
+
+## 1\. Document Format
+
+```HTML
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+<!-- meta tags & CSS file goes here -->
+    </head>
+
+  <body>
+<!-- The body of HTML element -->
+  </body>
+
+</html>
+```
+
+The first line tells the browser this is the HTML document.
+
+```HTML
+<!DOCTYPE HTML>
+```
+
+The second line is used for defining the language of the webpage you're building. You can also put another language as well but for best practices, we used en(English) or any one language.
+
+```HTML
+<html lang="en">
+```
+
+Meta tags enable superpower to your project when you share something on social media it automatically shows the preview images and ranks your website on top of Google with targeted keywords.
+
+## 2\. Meta Tags
+
+```HTML
+<!-- Meta Tags -->
+
+<meta name="title" content="Personal blog Page">
+<meta name="description" content=" This is a personal blog website.">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+```
+
+The first two meta tags are used to define the title and description of your webpage and charset meta tags are used to support different characters(emojis) and the rest are for device width so on. Another approach you can use is [Opengraph Protocol](https://ogp.me/) which is highly recommended.
+
+## 3\. Preloading and Prefetching
+
+These two techniques are really powerful and even used in next, React and modern web frameworks to optimize resources.
+
+Preloading and prefetching are techniques in HTML to optimize the loading of resources, such as images, scripts, stylesheets, and more, to enhance the overall performance and user experience of a web page.
+
+#### Preloading:
+
+Preloading is used to load certain resources in advance, before they are needed by the page, to reduce latency and improve performance.
+
+Use the tag with the rel="preload" attribute to specify the resource to be preloaded.
+
+```HTML
+<link rel="preload" href="example-image.jpg" as="image">
+```
+
+#### Prefetching
+
+Prefetching is used to fetch resources in the background that might be needed for future navigation, improving the loading speed of subsequent pages.
+
+```HTML
+<link rel="prefetch" href="next-page.html">
+```
+
+#### Self-Closing Tags & Paired Tag
+
+In HTML, elements can be classified into two main types: self-closing tags and paired tags (also known as open and close tags).
+
+```HTML
+
+<!-- Slef Closing Tags -->
+<img src="image.jpg" alt="Description">
+<be>
+<input type="text">
+
+<!-- Paired Tags-->
+<div>
+  <h1>This is inside a div.</h1>
+  <p>Another paragraph inside the same div.</p>
+</div>
+```
+
+These are just basic tags you can explore more tags [here!](https://www.w3schools.com/tags/)
+
+#### Semantic HTML
+
+Semantic HTML refers to the use of HTML markup that carries meaning about the structure and content of a web page, making it more descriptive and meaningful both for developers and browsers.
+
+```HTML
+<!-- Semantic HTML Tags -->
+<article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
+```
+
+#### Forms
+
+The forms are an essential part of HTML when it comes to taking input from users for multiple purposes like login, registration, etc.
+
+```HTML
+<form action="demo.php method="get">
+ <!-- Email Input -->
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+
+    <!-- Radio Buttons -->
+    <label>Gender:</label>
+    <input type="radio" id="male" name="gender" value="male" checked>
+    <label for="male">Male</label>
+    <input type="radio" id="female" name="gender" value="female">
+    <label for="female">Female</label>
+</form>
+```
+
+We use two methods form `action="demo.php"` and `method="get"`. The first action page is executed when the user clicks on the submit button of the form and the data submitted by the user goes to a server that's how the frontend backend communicates in the way.
+
+The second thing is a method and there are different methods like get, post, and delete depending on the need you can use them.
+
+#### Table
+
+HTML tables are used to display data in rows and columns.
+
+```HTML
+
+<table>
+    <thead>
+      <tr>
+        <th>Student</th>
+        <th>Subject</th>
+        <th>Grade</th>
+      </tr>
+    </thead>
+<tbody>
+      <tr>
+        <td>John Doe</td>
+        <td>Math</td>
+        <td>A</td>
+      </tr>
+      <tr>
+        <td>Jane Smith</td>
+        <td>English</td>
+        <td>B</td>
+      </tr>
+</table>
+```
+
+The table will show something like this.
+
+![Image description](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/ri7kqm4w4qbeqssj4cg4.png align="left")
+
+Cool, right! This is enough HTML knowledge you need as a beginner but this is not complete HTML. You can explore and learn more about it but this is important HTML stuff you know.
+
+I appreciate it if someone finds something wrong (Code, typos, grammar mistakes) in the article do share it in the comment will correct it.
+
+Support to my Youtube Channel Here👇
+
+%[https://youtu.be/MHwR4HGZdoE?si=g8xjXC8bgDlY-wjt]

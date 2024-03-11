@@ -1,0 +1,180 @@
+---
+title: Strategies for Writing Clean Code and Boosting Performance
+date: '2023-03-08'
+tags: ['markdown', 'code', 'features']
+draft: false
+summary: Strategies for Writing Clean Code and Boosting Performance
+---
+
+Cascading Style Sheet (CSS3) is changing, and evolving continuously. There are different ways to write CSS. Some developers choose to write separate files for better understanding or to organize structure, other people write single CSS files. It depends on what kind of project you're working on.
+
+# OLD V/S NEW CSS
+
+CSS3 is a complete game changer. The new CSS3 is amazing and it's more powerful with new features including responsive layouts, animations, variables, properties like calc functions, etc.  
+In the old way, people wrote CSS and found it difficult to make websites responsive and optimized but now can be done easily.
+
+## Examples of Writing Bad CSS
+
+Most of the time people write the same code again and again for example
+
+```HTML
+
+<div class="item-1"> Hello </h1>
+<h2  class="item-2"> Amazing </h1>
+<h3  class="item-3"> Developers </h1>
+```
+
+Now, I want to change the back color of every individual element. I have to write the following CSS code app.css
+
+```css
+.item-1 {
+  background-color: red;
+}
+
+.item-2 {
+  background-color: red;
+}
+
+.item-3 {
+  background-color: red;
+}
+```
+
+## Effective Way to Write CSS3
+
+In the previous example, we had to write three different lines to change color right, and now assume you're working with a large codebase and your team lead assigns you the task to change every `<h1>` element color so you have to find each heading change the color.
+
+app.css
+
+```css
+.item-1 {
+  background-color: yellow;
+}
+
+.item-2 {
+  background-color: yellow;
+}
+
+.item-3 {
+  background-color: yellow;
+}
+```
+
+It's time-consuming and a bad way to solve problems. Here's an effective way to solve this.
+
+Create systemDesign.css as a separate file and add all your styling rules. systemDesign.css
+
+```css
+:root {
+  --color: red;
+  --back-color: yellow;
+  --h1: 32px --h2: 24px;
+}
+
+/**
+* ? You can write all CSS styles here. 
+**/
+```
+
+Now let's take the previous example if you have to change the back color of all heading tags all you have to update is a back-color style from the syetmDesign.css file.
+
+index.html
+
+```HTML
+<div class="item-1"> Hello </h1>
+<h2  class="item-2"> Amazing </h1>
+<h3  class="item-3"> Developers </h1>
+```
+
+systemDesign.css
+
+```css
+:root {
+  --color: red;
+  --back-color: yellow;
+  --h1: 32px --h2: 24px;
+}
+
+/**
+* ? Write your CSS classes
+**/
+
+.item-1 {
+  background-color: --var(back-color);
+}
+
+.item-2 {
+  background-color: --var(back-color);
+}
+
+.item-3 {
+  background-color: --var(back-color);
+}
+```
+
+Now if you want to change back color change the variable value and that's it. You can also use the [sibling concept of CSS](<https://www.browserstack.com/guide/sibling-selectors-in-css#:~:text=4.-,General%20sibling%20selector%20(~),being%20adjacent%20to%20each%20other>) to solve this issue but always use standard practices.
+
+## Second Example
+
+Another way is to not repeat your code again and again.
+
+Assume you have two classes `.one` and `.two` that require the same properties.
+
+```HTML
+<button class="one"> Web </button>
+<button class="two"> Development </button>
+```
+
+```CSS
+
+.one{
+
+padding: 10px 40px;
+margin: 10px;
+font-size: 32px;
+color: black;
+background-color: white;
+}
+
+.two{
+padding: 10px 40px;
+margin: 10px;
+font-size: 32px;
+color: white; // color changes
+background-color: black; // back-color changes
+}
+```
+
+You're using the same code here and just two properties are changing back-color and color.
+
+### Solutions
+
+```css
+.one,
+.two {
+  padding: 10px 40px;
+  margin: 10px;
+  font-size: 32px;
+  color: black;
+  background-color: white;
+}
+
+.two {
+  color: white;
+  background-color:;
+}
+```
+
+In CSS, when you use a comma between selectors, it allows you to apply the same set of styles to multiple selectors. This grouping of selectors with a comma is a way to apply a common style block to multiple elements without duplicating the styles for each selector.
+
+I'm a developer learning something new every day and sharing his learnings through this platform. if you find any wrong in the code, or typos mistakes I will highly appreciate it and will fix it ASAP.
+
+Let me know in the comments if you find some bugs.
+
+That's it!
+
+Let's chat on [Twitter!](https://twitter.com/devgancode)
+
+Support my YouTube channel 👇
+
+%[https://youtu.be/OxR_Ekfz_gc?si=QyDhPpzCbLa2UCCk]
